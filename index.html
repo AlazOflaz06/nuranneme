@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nur Anneye Özel</title>
+  <title>Nur Anneme</title>
   <style>
     body {
       background: linear-gradient(to bottom right, #ffe0ec, #fff0f5);
@@ -12,27 +12,65 @@
       margin: 0;
       padding: 0;
     }
+
+    .giris {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .giris h1 {
+      font-size: 2.5rem;
+      color: #ad1457;
+      margin-bottom: 20px;
+    }
+
+    .giris button {
+      background-color: #ad1457;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .giris button:hover {
+      background-color: #c2185b;
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
       text-align: center;
+      display: none;
     }
-    h1 {
-      font-size: 2.5rem;
+
+    h2 {
+      font-size: 2rem;
       margin-bottom: 10px;
       color: #ad1457;
     }
+
     p {
       font-size: 1.2rem;
       line-height: 1.7;
       margin-bottom: 20px;
     }
+
     .heart {
       font-size: 2rem;
       color: red;
       animation: pulse 1.5s infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.3); }
@@ -44,6 +82,7 @@
       margin: 40px auto 20px;
       text-align: center;
     }
+
     #letters button {
       background-color: #ad1457;
       color: white;
@@ -55,9 +94,11 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     #letters button:hover {
       background-color: #c2185b;
     }
+
     #letterContent {
       max-width: 700px;
       margin: 20px auto 60px;
@@ -73,44 +114,58 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Nur Anneye Özel Bir Sürpriz 💐</h1>
+
+  <!-- Giriş Ekranı -->
+  <div class="giris" id="girisEkrani">
+    <h1>Nur Anneme Hediye 🎁</h1>
+    <button onclick="girisYap()">Devam Et</button>
+  </div>
+
+  <!-- Asıl İçerik -->
+  <div class="container" id="anaIcerik">
+    <h2>Nur Anneme Özel Bir Sürpriz 💐</h2>
     <p>
-      Sevgili Nur Anne,<br />
+      Sevgili Nur Annem,<br />
       Benimle Yağmur’un konuşmasına izin verdiğiniz için teşekkür ederim. Böyle güzel
       karakterli, saygılı bir kız büyüttüğünüz için ayrıca minnettarım. Belki bu yaptığım
       küçücük bir şey olacak ama elimden sadece bu kadarı geldi.
     </p>
     <p>
-      Size ilk defa gerçekten “Anne” demek istedim. Anneliğiniz o kadar güzel ki, size ne kadar teşekkür etsem az.<br />
+      Size ilk defa gerçekten “Annem” demek istedim. Anneliğiniz o kadar güzel ki, size ne kadar teşekkür etsem az.<br />
       Gözünüz hiç arkada kalmayacak. Sizi asla pişman etmeyeceğim.<br />
       Her zaman minnetle anılacaksınız. 🙏
     </p>
     <div class="heart">❤️</div>
-  </div>
 
-  <div id="letters">
-    <button onclick="showLetter(1)">Mektup 1</button>
-    <button onclick="showLetter(2)">Mektup 2</button>
-    <button onclick="showLetter(3)">Mektup 3</button>
-    <button onclick="showLetter(4)">Mektup 4</button>
-    <button onclick="showLetter(5)">Mektup 5</button>
-  </div>
+    <div id="letters">
+      <button onclick="showLetter(1)">Mektup 1</button>
+      <button onclick="showLetter(2)">Mektup 2</button>
+      <button onclick="showLetter(3)">Mektup 3</button>
+      <button onclick="showLetter(4)">Mektup 4</button>
+      <button onclick="showLetter(5)">Mektup 5</button>
+    </div>
 
-  <div id="letterContent">Bir mektuba tıklayarak okuyabilirsiniz.</div>
+    <div id="letterContent">Bir mektuba tıklayarak okuyabilirsiniz.</div>
+  </div>
 
   <script>
+    function girisYap() {
+      document.getElementById('girisEkrani').style.display = 'none';
+      document.getElementById('anaIcerik').style.display = 'block';
+    }
+
     const letters = {
-      1: `Sevgili Nur Anne,\nHayatıma kattığınız sevgi ve sıcaklık için teşekkür ederim. Siz olmasaydınız, Yağmur böyle güzel bir insan olmazdı. İyi ki varsınız.`,
-      2: `Nur Annecim,\nHer zaman yanımızda olduğunuz için minnettarım. Sevginiz ve desteğiniz bizim için çok değerli. Sizi çok seviyoruz!`,
-      3: `Canım Nur Anne,\nKızınızın kalbinde ne kadar güzel bir yeriniz olduğunu biliyorum. Bize kattığınız her şey için teşekkür ederim. Sağlıklı ve mutlu kalın.`,
-      4: `Sevgili Nur Anne,\nSizin gibi bir anneye sahip olduğu için Yağmur çok şanslı. Sizden öğrendikleriyle hayatı daha güzel yaşıyor. Her şey için teşekkürler!`,
-      5: `Nur Anne,\nBu küçük mektupla size ne kadar değer verdiğimizi göstermek istedik. Sevginizle ailemizi daha da güçlü kıldınız. İyi ki bizimlesiniz!`
+      1: `Canım Annem,\nSadece Yağmur’un değil, hepimizin kalbine dokunuyorsunuz. Sizin sevginizle bu aile daha güzel. İyi ki varsınız.`,
+      2: `Nur Annem,\nVarlığınız huzur veriyor. Bu küçük sayfada size duyduğum minneti anlatmak istedim. Sizi çok seviyoruz.`,
+      3: `Sevgili Annem,\nYüzünüzdeki gülümseme, hepimize güç veriyor. Allah sizi başımızdan eksik etmesin. ❤️`,
+      4: `Annem,\nSizi tanıdığım her gün için minnettarım. Bu satırlar yetersiz ama kalbimiz hep sizinle.`,
+      5: `Kıymetli Annem,\nSize bu mektupları yazmak bile duygulandırıyor. Varlığınız bir nimet, ellerinizden öpüyorum.`
     };
 
     function showLetter(num) {
       document.getElementById("letterContent").textContent = letters[num];
     }
   </script>
+
 </body>
 </html>
