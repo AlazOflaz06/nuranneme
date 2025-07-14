@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nur Anne'ye Teşekkür</title>
-<style>
-  body {
-    margin: 0; padding: 40px 20px;
-    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
-    font-family: 'Arial', sans-serif;
-    color: #4a2c3a;
-    text-align: center;
-    min-height: 100vh;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    color: #a82c5a;
-  }
-  .container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: #fff0f5cc;
-    padding: 30px 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 12px #e88bb8cc;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    white-space: pre-line;
-  }
-  .closing {
-    margin-top: 40px;
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #b43c70;
-  }
-  .flower {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
-    background-size: contain;
-    pointer-events: none;
-    animation: floatUp 6s linear infinite;
-  }
-  @keyframes floatUp {
-    0% {transform: translateY(100vh) rotate(0deg); opacity: 1;}
-    100% {transform: translateY(-10vh) rotate(360deg); opacity: 0;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nur Anneye Özel</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe0ec, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      color: #4a2c3a;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ad1457;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .heart {
+      font-size: 2rem;
+      color: red;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    #letters {
+      max-width: 700px;
+      margin: 40px auto 20px;
+      text-align: center;
+    }
+    #letters button {
+      background-color: #ad1457;
+      color: white;
+      border: none;
+      margin: 5px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #letters button:hover {
+      background-color: #c2185b;
+    }
+    #letterContent {
+      max-width: 700px;
+      margin: 20px auto 60px;
+      background: #fff0f5cc;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #e88bb8cc;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #4a2c3a;
+      white-space: pre-line;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Nur Anneye Özel Bir Sürpriz 💐</h1>
+    <p>
+      Sevgili Nur Anne,<br />
+      Benimle Yağmur’un konuşmasına izin verdiğiniz için teşekkür ederim. Böyle güzel
+      karakterli, saygılı bir kız büyüttüğünüz için ayrıca minnettarım. Belki bu yaptığım
+      küçücük bir şey olacak ama elimden sadece bu kadarı geldi.
+    </p>
+    <p>
+      Size ilk defa gerçekten “Anne” demek istedim. Anneliğiniz o kadar güzel ki, size ne kadar teşekkür etsem az.<br />
+      Gözünüz hiç arkada kalmayacak. Sizi asla pişman etmeyeceğim.<br />
+      Her zaman minnetle anılacaksınız. 🙏
+    </p>
+    <div class="heart">❤️</div>
+  </div>
 
-<h1>Nur Anne'ye</h1>
+  <div id="letters">
+    <button onclick="showLetter(1)">Mektup 1</button>
+    <button onclick="showLetter(2)">Mektup 2</button>
+    <button onclick="showLetter(3)">Mektup 3</button>
+    <button onclick="showLetter(4)">Mektup 4</button>
+    <button onclick="showLetter(5)">Mektup 5</button>
+  </div>
 
-<div class="container">
-Sizi tanımak benim için büyük bir şans. Fakat hayatıma böyle güzel, sevgi dolu ve özel bir insanı kazandırdığınız için size ayrıca minnettarım.
+  <div id="letterContent">Bir mektuba tıklayarak okuyabilirsiniz.</div>
 
-Benimle Yağmur'un konuşmasına izin verdiğiniz için size teşekkür ederim. Böyle güzel, karakterli ve saygılı bir kızı büyütüp yetiştirdiğiniz için de ayrıca teşekkür ederim.
+  <script>
+    const letters = {
+      1: `Sevgili Nur Anne,\nHayatıma kattığınız sevgi ve sıcaklık için teşekkür ederim. Siz olmasaydınız, Yağmur böyle güzel bir insan olmazdı. İyi ki varsınız.`,
+      2: `Nur Annecim,\nHer zaman yanımızda olduğunuz için minnettarım. Sevginiz ve desteğiniz bizim için çok değerli. Sizi çok seviyoruz!`,
+      3: `Canım Nur Anne,\nKızınızın kalbinde ne kadar güzel bir yeriniz olduğunu biliyorum. Bize kattığınız her şey için teşekkür ederim. Sağlıklı ve mutlu kalın.`,
+      4: `Sevgili Nur Anne,\nSizin gibi bir anneye sahip olduğu için Yağmur çok şanslı. Sizden öğrendikleriyle hayatı daha güzel yaşıyor. Her şey için teşekkürler!`,
+      5: `Nur Anne,\nBu küçük mektupla size ne kadar değer verdiğimizi göstermek istedik. Sevginizle ailemizi daha da güçlü kıldınız. İyi ki bizimlesiniz!`
+    };
 
-Belki yaptığım bu küçük şey size çok büyük gelmeyecek ama elimden gelen en içten ve samimi çaba bu. Nur Annecim, size ilk defa böyle “Anne” demek istedim.
-
-Gerçekten anneliğiniz o kadar güzel ki, kalbimizde her zaman özel bir yeriniz var. İyi ki varsınız, iyi ki Yağmur'un annesisiniz.
-
-Size ne kadar teşekkür etsem azdır. Sizi asla pişman etmeyeceğim. Gözünüz arkada kalmasın. Ayrıca size böyle küçük sürprizler yapacağıma emin olabilirsiniz.
-
-Siz bizim için çok değerlisiniz ve lütfen kendinize çok iyi bakın. Nur Annecim, hastalığınızın kısa sürede geçmesini diliyorum. Dimdik, sağlıklı ve güçlü kalmanız en büyük dileğim.
-
-Sizi çok seviyoruz Nur Annem. Her zaman yanınızda olacağız.
-</div>
-
-<script>
-  function createFlower() {
-    const flower = document.createElement('div');
-    flower.classList.add('flower');
-    flower.style.left = Math.random() * 100 + 'vw';
-    flower.style.animationDuration = (5 + Math.random() * 5) + 's';
-    flower.style.animationDelay = Math.random() * 6 + 's';
-    document.body.appendChild(flower);
-    setTimeout(() => {
-      flower.remove();
-    }, 11000);
-  }
-  setInterval(createFlower, 500);
-</script>
-
+    function showLetter(num) {
+      document.getElementById("letterContent").textContent = letters[num];
+    }
+  </script>
 </body>
 </html>
