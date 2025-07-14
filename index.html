@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nur Anne'ye Teşekkür</title>
+<style>
+  body {
+    margin: 0; padding: 40px 20px;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    font-family: 'Arial', sans-serif;
+    color: #4a2c3a;
+    text-align: center;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #a82c5a;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff0f5cc;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 12px #e88bb8cc;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+  .closing {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #b43c70;
+  }
+  .flower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+    background-size: contain;
+    pointer-events: none;
+    animation: floatUp 6s linear infinite;
+  }
+  @keyframes floatUp {
+    0% {transform: translateY(100vh) rotate(0deg); opacity: 1;}
+    100% {transform: translateY(-10vh) rotate(360deg); opacity: 0;}
+  }
+</style>
+</head>
+<body>
+
+<h1>Nur Anne'ye</h1>
+
+<div class="container">
+Sizi tanımak benim için büyük bir şans. Fakat hayatıma böyle güzel, sevgi dolu ve özel bir insanı kazandırdığınız için size ayrıca minnettarım.
+
+Benimle Yağmur'un konuşmasına izin verdiğiniz için size teşekkür ederim. Böyle güzel, karakterli ve saygılı bir kızı büyütüp yetiştirdiğiniz için de ayrıca teşekkür ederim.
+
+Belki yaptığım bu küçük şey size çok büyük gelmeyecek ama elimden gelen en içten ve samimi çaba bu. Nur Annecim, size ilk defa böyle “Anne” demek istedim.
+
+Gerçekten anneliğiniz o kadar güzel ki, kalbimizde her zaman özel bir yeriniz var. İyi ki varsınız, iyi ki Yağmur'un annesisiniz.
+
+Size ne kadar teşekkür etsem azdır. Sizi asla pişman etmeyeceğim. Gözünüz arkada kalmasın. Ayrıca size böyle küçük sürprizler yapacağıma emin olabilirsiniz.
+
+Siz bizim için çok değerlisiniz ve lütfen kendinize çok iyi bakın. Nur Annecim, hastalığınızın kısa sürede geçmesini diliyorum. Dimdik, sağlıklı ve güçlü kalmanız en büyük dileğim.
+
+Sizi çok seviyoruz Nur Annem. Her zaman yanınızda olacağız.
+</div>
+
+<script>
+  function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+    flower.style.animationDelay = Math.random() * 6 + 's';
+    document.body.appendChild(flower);
+    setTimeout(() => {
+      flower.remove();
+    }, 11000);
+  }
+  setInterval(createFlower, 500);
+</script>
+
+</body>
+</html>
